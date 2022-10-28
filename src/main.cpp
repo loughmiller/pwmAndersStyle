@@ -101,26 +101,31 @@ void loop() {
 
   CRGB color = CHSV(hue, 240, 255);
 
-  // for (uint_fast16_t i=0; i<numLEDs; i++) {
-  //   if ((loops + i) % 6 == 0)
-  //   leds[i] = color;
-  // }
+  // MOD
+  for (uint_fast16_t i=0; i<numLEDs; i++) {
+    if ((loops + i) % 6 == 0) {
+      CRGB color = CHSV(hue, 240, 255);
+    }
+  }
 
+  // ALL RANDO
   // for (uint_fast16_t i=0; i<numLEDs; i++) {
 
   //   if (random8(6) < 3)
   //   leds[i] = color;
   // }
 
-  uint_fast8_t r = random8();
-  for (uint_fast16_t i=0; i<numLEDs; i++) {
-    if ((r + i) % 4 == 0)
-    leds[i] = color;
-  }
+  // // RAND MOD
+  // uint_fast8_t r = random8();
+  // for (uint_fast16_t i=0; i<numLEDs; i++) {
+  //   if ((r + i) % 3 != 0) {
+  //     leds[i] = color;
+  //   }
+  // }
 
   FastLED.show();
 
-  // delayMicroseconds(21);
+  delayMicroseconds(500);
 }
 
 
